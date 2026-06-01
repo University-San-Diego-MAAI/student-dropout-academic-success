@@ -1,0 +1,40 @@
+[project]
+name = "student-dropout-project"
+version = "0.1.0"
+description = "AAI-510 Student Dropout Prediction"
+requires-python = ">=3.12"
+dependencies = [
+    "ucimlrepo>=0.0.7",
+    "pandas>=2.2",
+    "numpy>=2.0",
+    "scikit-learn>=1.5",
+    "imbalanced-learn>=0.12",
+    "phik>=0.12",
+    "xgboost>=2.1",
+    "lightgbm>=4.3",
+    "optuna>=4.1",
+    "shap>=0.46",
+    "joblib>=1.4",
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.34",
+    "pydantic>=2.7",
+    "pydantic-settings>=2.4",
+    "python-dotenv>=1.0",
+    "streamlit>=1.35",
+    "matplotlib>=3.9",
+    "seaborn>=0.13",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.4",
+    "httpx>=0.27",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I"]
