@@ -40,8 +40,7 @@ venv.bak/
 
 # Project artifacts
 data/raw/
-artifacts/
-*.pkl
+# artifacts/ — kept for Streamlit Cloud deploy
 *.joblib
 
 # Logs
