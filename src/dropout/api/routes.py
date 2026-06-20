@@ -11,7 +11,13 @@ router = APIRouter()
 
 def get_predictor(request: Request) -> Predictor:
     """Retrieve Predictor instance from application state."""
-    return request.app.state.predictor
+    predictor = getattr(request.app.state, "predictor", None)
+    if predictor is None:
+        raise HTTPException(
+            status_code=503,
+            detail="Model artifacts are not loaded. Run the training script first.",
+        )
+    return predictor
 
 
 @router.get("/health")

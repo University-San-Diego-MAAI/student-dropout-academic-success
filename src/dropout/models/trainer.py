@@ -13,6 +13,7 @@ from sklearn.ensemble import RandomForestClassifier, StackingClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import f1_score
 from sklearn.model_selection import train_test_split
+from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 
 optuna.logging.set_verbosity(optuna.logging.WARNING)
@@ -46,12 +47,18 @@ def train_and_save(df: pd.DataFrame, preprocessor, artifact_dir: Path) -> None:
     X_train_sm, y_train_sm = smote.fit_resample(X_train_proc, y_train)
 
     # --- Model 1: Logistic Regression ---
-    scaler = StandardScaler()
-    X_lr = scaler.fit_transform(X_train_sm)
-    lr = LogisticRegression(
-        class_weight="balanced", max_iter=1000, random_state=42
+    lr = Pipeline(
+        steps=[
+            ("scaler", StandardScaler()),
+            (
+                "model",
+                LogisticRegression(
+                    class_weight="balanced", max_iter=1000, random_state=42
+                ),
+            ),
+        ]
     )
-    lr.fit(X_lr, y_train_sm)
+    lr.fit(X_train_sm, y_train_sm)
 
     # --- Model 2: Random Forest ---
     rf = RandomForestClassifier(

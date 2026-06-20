@@ -154,7 +154,7 @@ This generates:
 ### 4️⃣ Start the FastAPI Server
 
 ```bash
-uv run uvicorn src.dropout.api.main:app --reload --port 8000
+uv run uvicorn dropout.api.main:app --reload --port 8000
 ```
 
 Visit:

@@ -17,6 +17,7 @@ class Settings(BaseSettings):
     artifact_dir: Path = Path("artifacts")
     model_path: Path = Path("artifacts/model.pkl")
     preprocessor_path: Path = Path("artifacts/preprocessor.pkl")
+    label_encoder_path: Path = Path("artifacts/label_encoder.pkl")
     log_level: str = "INFO"
 
 
