@@ -15,6 +15,11 @@
 > 🔬 A production-ready multiclass ML pipeline predicting student outcomes: **Dropout** | **Enrolled** | **Graduate**
 
 ---
+[🎓 Student Dropout & Academic Success Dashboard Link](https://student-dropout-academic-success-xbwslyfqpypnnziljl5mwy.streamlit.app/)
+
+**🚀 TEAM 6** — Manoj Patra 👤 Tanvi Singh 👤 Sourangshu Pal
+
+---
 
 ## 📖 Table of Contents
 
