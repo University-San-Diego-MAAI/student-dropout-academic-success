@@ -69,14 +69,5 @@ main.py
 # Large media files
 *.pdf
 media/
-
-# Project spec (private implementation plan)
-project_implementation.md
-
-# Agent memory file
-AGENTS.md
-node_modules/*
-create_presentation.js
-package-lock.json
-package.json
-student_dropout_presentation.pptx
+Predicting Who Leaves Before They Do.pptx
+AAI510_Final_Presentation_Improved.pptx
